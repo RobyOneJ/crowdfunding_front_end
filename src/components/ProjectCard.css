@@ -1,7 +1,7 @@
 .project-card {
     width: 100%;
-    border: 1pxsolidblack;
-    box-shadow: 0px0px5pxgray;
+    border: 1px solid black;
+    box-shadow: 0px 0px 5px gray;
 }
 
 .project-card img {
@@ -9,3 +9,98 @@
     height: 300px;
     object-fit: cover;
 }
+
+.flippable {
+    /*Sizing*/
+    height: 300px;
+    width: 100%;
+    perspective: 1000px;
+}
+
+.card {
+    /*Sizing*/
+    height: 100%;
+    width: 100%;
+
+    transform-style: preserve-3d;
+
+    /*Content Alignment*/
+    position: relative;
+
+    /*Styling*/
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+
+    transition: transform 1200ms;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+
+}
+
+.card-front,
+.card-back{
+    /*Sizing*/
+    height: 100%;
+    width: 100%;
+
+    backface-visibility: hidden;
+
+    /*Alignment*/
+    position: absolute;
+
+    /*Styling*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Fonts*/
+    font-size:larger;
+    text-align: center;
+    background-color: beige;
+
+
+}
+
+.card-front {
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/*.floating {
+    -webkit-animation: movebounce 5s linear infinite;
+    animation: movebounce 5s linear infinite;
+  }
+  
+  @-webkit-keyframes movebounce {
+    0% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+    50% {
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px);
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes movebounce {
+    0% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+    50% {
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px);
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+    }
+  }*/

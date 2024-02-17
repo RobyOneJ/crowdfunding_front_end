@@ -3,9 +3,12 @@ import "./ProjectCard.css";
 
 
 function ProjectCard({ projectData }) {
+
+    const projectLink = `project/${projectData.id}`;
+
     return (
         <div className="project-card">
-            <Link to="/project">
+            <Link to={projectLink}>
                 <div className="flippable">
                     <div className="card">
                         <div className="card-back">{projectData.description}</div>

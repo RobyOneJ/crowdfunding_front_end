@@ -1,0 +1,28 @@
+#project-form {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-flow: column wrap;
+    min-height: 300px;
+    padding-top: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+
+}
+
+#project-form textarea {
+    font-family: inherit;
+    height: 64px;
+}
+
+#project-form input {
+    height: 24px;
+}
+
+#project-form button {
+    margin-left: 200px;
+    margin-right: 200px;
+}

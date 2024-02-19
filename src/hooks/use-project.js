@@ -9,7 +9,6 @@ function useProject(projectId) {
 
     
     useEffect(() => {
-
         getProject(projectId).then((project) => {
             setProject(project);
             setIsLoading(false);

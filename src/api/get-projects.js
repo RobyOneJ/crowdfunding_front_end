@@ -18,13 +18,13 @@ async function getProjects() {
         throw newError(fallbackError);});
         // If the error response *is* JSON, then we will include the info fromthat JSON in the error we throw.
         // Usually, the server will send the error message in the `detail`property.
-        // You may have not configured the back end to use the `detail` property.If that is the case then you can change the code below to use a different property, e.g.: `message
+        // You may have not configured the back end to use the `detail` property.If that is the case then you can change the code below to use a different property, e.g.: `message`
 
         const errorMessage = data?.detail ?? fallbackError;
         throw new Error(errorMessage);
     }
 
-    // ...on the other hand, if the request was successful then we will returnthe data from the response.
+    // On the other hand, if the request was successful then we will returnthe data from the response.
     // Turning the response to JSON takes time so we need to use the `await`keyword again.
 
     return await response.json();

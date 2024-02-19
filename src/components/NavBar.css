@@ -1,0 +1,46 @@
+/*NavBar style*/
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: medium;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu:hover {
+    background-color: var(--color2);
+    color: var(--color1);
+    border-radius: 6px;
+}
+
+/* Style for the header nav links*/
+
+header nav {
+    display: flex;
+    color: #ECEDFE;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+/* Default style of <a> tag*/
+a {
+    font-size: 24px;
+    color: var(--color2);
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* Default style for mouse pointer on the <a> element*/
+a.menu-item:hover {
+    background-color:navy;
+    color: var(--color1);
+    border-radius: 6px;
+}
+
+a:active {
+    color: lightskyblue;
+}
+

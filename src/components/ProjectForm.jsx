@@ -47,7 +47,7 @@ const ProjectForm = () => {
       <input
         type="text"
         name="goal"
-        placeholder="Project goal"
+        placeholder="Goal $ amount"
         value={goal}
         onChange={(event) => setGoal(event.target.value)}
       />

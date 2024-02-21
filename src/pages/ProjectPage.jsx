@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project"
+import { Link } from "react-router-dom"; 
 
 function ProjectPage() {
 
@@ -23,11 +24,12 @@ function ProjectPage() {
             <h3>Created at: {project.date_created}</h3>
             <h3>{`Status: ${project.is_open}`}</h3>
             <h3>Pledges:</h3>
+            <Link to={`/pledge/${project.id}`}><button>New Pledge</button></Link>
             <ul>
                 {project.pledges.map((pledgeData, key) => {
                     return (
                         <li key={key}>
-                            {pledgeData.amount} from {pledgeData.supporter}
+                            ${pledgeData.amount} from {pledgeData.is_anonymous ? "anonymous" : `${pledgeData.supporter}`}
                         </li>
                     );
                 })}

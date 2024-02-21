@@ -24,9 +24,8 @@ const ProjectForm = () => {
       image
     });
     newProject.then(project => {
-      navigate(`/project/${project.id}`);
-      
-    });   
+      navigate(`/project/${project.id}`);  
+    }).finally(() => setIsSubmitting(false));   
   };
 
   return (

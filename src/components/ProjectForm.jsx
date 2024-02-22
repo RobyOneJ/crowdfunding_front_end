@@ -57,8 +57,8 @@ const ProjectForm = () => {
         value={image}
         onChange={(event) => setImage(event.target.value)}
       />
-      <button type="submit" className='new-proj-button' disabled={isSubmitting}>
-        Create project
+      <button type="submit" id='new-proj-button' disabled={isSubmitting}>
+        Create New Project
       </button>
       {error && <p>{error}</p>}
     </form>

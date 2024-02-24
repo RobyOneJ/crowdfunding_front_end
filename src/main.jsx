@@ -11,11 +11,12 @@ import CreateUserPage from './pages/CreateUserPage.jsx';
 import UserPage from './pages/UserPage.jsx';
 import NavBar from "./components/NavBar.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
+import App from "./app";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <NavBar />,
+    element: <App />,
     children: [
       { path: "/", element: <HomePage /> },
       { path: "/login", element: <LoginPage /> },

@@ -14,7 +14,6 @@ function LoginForm() {
         password: "",
     });
 
-
     const handleChange = (event) => {
         const { id, value } = event.target;
         setCredentials((prevCredentials) => ({
@@ -33,6 +32,7 @@ function LoginForm() {
                 window.localStorage.setItem("token", response.token);
                 setAuth({
                     token: response.token,
+                    userId: response.user_id
                 });
                 navigate("/");
             });

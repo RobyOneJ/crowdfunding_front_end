@@ -9,7 +9,6 @@ import CreateProjectPage from './pages/CreateProjectPage.jsx';
 import PledgePage from './pages/PledgePage.jsx';
 import CreateUserPage from './pages/CreateUserPage.jsx';
 import UserPage from './pages/UserPage.jsx';
-import NavBar from "./components/NavBar.jsx";
 import { AuthProvider } from "./components/AuthProvider.jsx";
 import App from "./app";
 

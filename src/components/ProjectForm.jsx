@@ -1,31 +1,48 @@
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import postProject from '../api/post-project';
+import putProject from '../api/put-project';
+import { useLocation } from "react-router-dom";
 import './ProjectForm.css';
 
 const ProjectForm = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [goal, setGoal] = useState('');
-  const [image, setImage] = useState('');
+  const { state } = useLocation();
+
+  const [title, setTitle] = useState(state?.title ?? "");
+  const [description, setDescription] = useState(state?.description ?? "");
+  const [goal, setGoal] = useState(state?.goal ?? "");
+  const [image, setImage] = useState(state?.image ?? "");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     setIsSubmitting(true);
 
-    const newProject = postProject({
-      title,
-      description,
-      goal,
-      image
-    });
-    newProject.then(project => {
-      navigate(`/project/${project.id}`);  
-    }).finally(() => setIsSubmitting(false));   
+    if (state?.id) {
+      putProject({
+        id: state.id,
+        title,
+        description,
+        goal,
+        image
+      }).then((project) => {
+        navigate(`/project/${project.id}`);
+      }).finally(() => setIsSubmitting(false));
+    } else {
+      const newProject = postProject({
+        title,
+        description,
+        goal,
+        image
+      });
+      newProject.then(project => {
+        navigate(`/project/${project.id}`);
+      }).finally(() => setIsSubmitting(false));
+    }
   };
 
   return (
@@ -58,7 +75,7 @@ const ProjectForm = () => {
         onChange={(event) => setImage(event.target.value)}
       />
       <button type="submit" id='new-proj-button' disabled={isSubmitting}>
-        Create New Project
+        {state?.id ? "Update" : "Create"} Project
       </button>
       {error && <p>{error}</p>}
     </form>

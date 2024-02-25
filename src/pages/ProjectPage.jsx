@@ -25,6 +25,8 @@ function ProjectPage() {
             <h2>{project.title}</h2>
             <h3>Created at: {project.date_created}</h3>
             <h3>{`Status: ${project.is_open}`}</h3>
+            {project.owner == auth.userId && <Link to="/project/edit" state={project}><button>Update project</button></Link>}
+            {auth.userId && project.owner != auth.userId && <Link to={`/pledge/${project.id}`}><button>New Pledge</button></Link>}
             <h3>Pledges:</h3>
             <ul>
                 {project.pledges.map((pledgeData, key) => {
@@ -35,7 +37,6 @@ function ProjectPage() {
                     );
                 })}
             </ul>
-            {auth.token && <Link to={`/pledge/${project.id}`}><button>New Pledge</button></Link>}
         </div>
     );
 

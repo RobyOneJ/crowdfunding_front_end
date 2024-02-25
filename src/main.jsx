@@ -12,6 +12,7 @@ import UserPage from './pages/UserPage.jsx';
 import UserForm from './components/UserForm.jsx';
 import { AuthProvider } from "./components/AuthProvider.jsx";
 import App from "./app";
+import ProjectForm from './components/ProjectForm.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       { path: "/login", element: <LoginPage /> },
       { path: "/project", element: <CreateProjectPage /> },
       { path: "/project/:id", element: <ProjectPage /> },
+      { path: "/project/edit", element: <ProjectForm /> },
       { path: "/pledge/:id", element: <PledgePage /> },
       { path: "/account", element: <CreateUserPage /> },
       { path: "/account/:id", element: <UserPage /> },

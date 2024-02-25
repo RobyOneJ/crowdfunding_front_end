@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postUser from "../api/post-user.js";
-import './UserForm.css';
 import useAuth from "../hooks/use-auth.js";
 import { useLocation } from "react-router-dom";
 import putUser from "../api/put-user.js";
+import './UserForm.css';
 
 
 function UserForm() {
@@ -38,7 +38,7 @@ function UserForm() {
                 first_name: details.first_name,
                 last_name: details.last_name,
                 email: details.email
-            }).then((response) => {
+            }).then(() => {
                 navigate(`/account/${auth.userId}`);
             });
         }
@@ -49,7 +49,7 @@ function UserForm() {
                 first_name: details.first_name,
                 last_name: details.last_name,
                 email: details.email
-            }).then((response) => {
+            }).then(() => {
                 navigate("/login");
             });
         }

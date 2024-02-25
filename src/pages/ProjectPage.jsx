@@ -26,16 +26,16 @@ function ProjectPage() {
             <h3>Created at: {project.date_created}</h3>
             <h3>{`Status: ${project.is_open}`}</h3>
             <h3>Pledges:</h3>
-            {auth.token && <Link to={`/pledge/${project.id}`}><button>New Pledge</button></Link>}
             <ul>
                 {project.pledges.map((pledgeData, key) => {
                     return (
                         <li key={key}>
-                            ${pledgeData.amount} from {pledgeData.is_anonymous ? "anonymous" : `${pledgeData.supporter}`}
+                            ${pledgeData.amount} from {pledgeData.is_anonymous ? "anonymous" : `${pledgeData.supporter}`}: {`${pledgeData.comment}`}
                         </li>
                     );
                 })}
             </ul>
+            {auth.token && <Link to={`/pledge/${project.id}`}><button>New Pledge</button></Link>}
         </div>
     );
 

@@ -2,18 +2,23 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import postUser from "../api/post-user.js";
 import './UserForm.css';
-
+import useAuth from "../hooks/use-auth.js";
+import { useLocation } from "react-router-dom";
+import putUser from "../api/put-user.js";
 
 
 function UserForm() {
+    const {state} = useLocation();
     const navigate = useNavigate();
+    const { auth, setAuth } = useAuth();
+
 
     const [details, setDetails] = useState({
         username: "",
         password: "",
-        first_name: "",
-        last_name: "",
-        email: ""
+        first_name: state?.first_name ?? "",
+        last_name: state?.last_name ?? "",
+        email: state?.email ?? ""
     });
 
 
@@ -27,7 +32,17 @@ function UserForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (details.username && details.password) {
+        if (auth.userId) {
+            putUser({
+                userId: auth.userId,
+                first_name: details.first_name,
+                last_name: details.last_name,
+                email: details.email
+            }).then((response) => {
+                navigate(`/account/${auth.userId}`);
+            });
+        }
+        else if (details.username && details.password) {
             postUser({
                 username: details.username,
                 password: details.password,
@@ -43,6 +58,7 @@ function UserForm() {
     return (
         <div id="user-form-container">
             <form id="user-form">
+                { !auth.userId && 
                 <div>
                     <input
                         type="text"
@@ -52,6 +68,8 @@ function UserForm() {
                         onChange={handleChange}
                     />
                 </div>
+                }
+                { !auth.userId && 
                 <div>
                     <input
                         type="password"
@@ -61,10 +79,12 @@ function UserForm() {
                         onChange={handleChange}
                     />
                 </div>
+                }
                 <div>
                     <input
                         type="text"
                         id="first_name"
+                        value={details.first_name}
                         placeholder="Enter your first name"
                         onChange={handleChange}
                     />
@@ -73,6 +93,7 @@ function UserForm() {
                     <input
                         type="text"
                         id="last_name"
+                        value={details.last_name}
                         placeholder="Enter your last name"
                         onChange={handleChange}
                     />
@@ -81,12 +102,13 @@ function UserForm() {
                     <input
                         type="text"
                         id="email"
+                        value={details.email}
                         placeholder="Enter a valid email address"
                         onChange={handleChange}
                     />
                 </div>
                 <button id='user-button-submit' onClick={handleSubmit}>
-                    Create User Account
+                    {auth.userId ? "Update" : "Create"} User Account
                 </button>
             </form>
         </div>

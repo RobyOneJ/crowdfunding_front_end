@@ -8,8 +8,6 @@ function UserPage() {
 
     const { id } = useParams();
     const { auth, setAuth } = useAuth();
-
-
     const { user, isLoading, error } = useUser(id);
 
     if (isLoading) {
@@ -28,7 +26,7 @@ function UserPage() {
             <h3>{`Last name: ${user.last_name}`}</h3>
             <h3>{`Email adress: ${user.email}`}</h3>
             <h3>Joined on the: {user.date_joined}</h3>
-            {auth.token && <Link to={`/user/${user.id}`}><button>Edit details</button></Link>}
+            {auth.token && <Link to="/account/edit" state={user}><button>Update details</button></Link>}
         </div>
     );
 

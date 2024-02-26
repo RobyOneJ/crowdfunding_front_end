@@ -30,10 +30,12 @@ function ProjectPage() {
             <h3>Pledges:</h3>
             <ul>
                 {project.pledges.map((pledgeData, key) => {
+                    const isMyPledge = pledgeData.supporter === auth.username;
+                    console.log(pledgeData, isMyPledge);
                     return (
                         <li key={key}>
                             ${pledgeData.amount} from {pledgeData.is_anonymous ? "anonymous" : `${pledgeData.supporter}`}: {`${pledgeData.comment}`}
-                            {pledgeData.supporter === auth.username && <Link to="/pledge/edit" state={pledgeData}><button>Update</button></Link>}
+                            {isMyPledge && <Link to="/pledge/edit" state={pledgeData}><button>Update</button></Link>}
                         </li>
                     );
                 })}

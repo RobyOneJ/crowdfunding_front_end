@@ -1,13 +1,13 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project"
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import useAuth from "../hooks/use-auth.js";
 
 function ProjectPage() {
 
     // Here we use a hook that comes for free in react router called `useParams`to get the id from the URL so that we can pass it to our useProject hook.
     const { id } = useParams();
-    const {auth, setAuth} = useAuth();
+    const { auth, setAuth } = useAuth();
 
     // useProject returns three pieces of info, so we need to grab them all here
     const { project, isLoading, error } = useProject(id);
@@ -25,14 +25,15 @@ function ProjectPage() {
             <h2>{project.title}</h2>
             <h3>Created at: {project.date_created}</h3>
             <h3>{`Status: ${project.is_open}`}</h3>
-            {project.owner == auth.userId && <Link to="/project/edit" state={project}><button>Update project</button></Link>}
-            {auth.userId && project.owner != auth.userId && <Link to={`/pledge/${project.id}`}><button>New Pledge</button></Link>}
+            {project.owner === auth.userId && <Link to="/project/edit" state={project}><button>Update project</button></Link>}
+            {auth.userId && project.owner !== auth.userId && <Link to={`/pledge/${project.id}`}><button>New pledge</button></Link>}
             <h3>Pledges:</h3>
             <ul>
                 {project.pledges.map((pledgeData, key) => {
                     return (
                         <li key={key}>
                             ${pledgeData.amount} from {pledgeData.is_anonymous ? "anonymous" : `${pledgeData.supporter}`}: {`${pledgeData.comment}`}
+                            {pledgeData.supporter === auth.username && <Link to="/pledge/edit" state={pledgeData}><button>Update</button></Link>}
                         </li>
                     );
                 })}

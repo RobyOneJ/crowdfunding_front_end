@@ -11,8 +11,9 @@ import CreateUserPage from './pages/CreateUserPage.jsx';
 import UserPage from './pages/UserPage.jsx';
 import UserForm from './components/UserForm.jsx';
 import { AuthProvider } from "./components/AuthProvider.jsx";
-import App from "./app";
 import ProjectForm from './components/ProjectForm.jsx';
+import PledgeForm from './components/PledgeForm.jsx';
+import App from "./app";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       { path: "/project/:id", element: <ProjectPage /> },
       { path: "/project/edit", element: <ProjectForm /> },
       { path: "/pledge/:id", element: <PledgePage /> },
+      { path: "/pledge/edit", element: <PledgeForm /> },
       { path: "/account", element: <CreateUserPage /> },
       { path: "/account/:id", element: <UserPage /> },
       { path: "/account/edit", element: <UserForm /> }

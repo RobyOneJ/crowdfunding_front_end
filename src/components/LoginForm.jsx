@@ -32,7 +32,8 @@ function LoginForm() {
                 window.localStorage.setItem("token", response.token);
                 setAuth({
                     token: response.token,
-                    userId: response.user_id
+                    userId: response.user_id,
+                    username: response.username
                 });
                 navigate("/");
             });

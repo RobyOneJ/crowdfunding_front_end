@@ -1,24 +1,26 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import postPledge from "../api/post-pledge";
+import putPledge from "../api/put-pledge";
+import { useLocation } from "react-router-dom";
 
 
 function PledgeForm() {
+    const { state } = useLocation();
     const navigate = useNavigate();
-    const { id } = useParams();
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const [pledge, setPledge] = useState({
-        amount: "",
-        comment: "",
-        isAnonymous: false
+        amount: state?.amount ?? "",
+        comment: state?.comment ?? "",
+        isAnonymous: state?.isAnonymous ?? false
     });
 
     const handleChange = (event) => {
         const { id, value, checked } = event.target;
         setPledge((prevPledge) => ({
             ...prevPledge,
-            [id]: id === 'isAnonymous' ? checked : value 
+            [id]: id === 'isAnonymous' ? checked : value
         }));
     };
 
@@ -27,11 +29,23 @@ function PledgeForm() {
 
         setIsSubmitting(true);
 
-        const newPledge = postPledge({ ...pledge, project: Number(id) });
+        if (state?.id) {
+            putPledge({
+                id: state.id,
+                amount: pledge.amount,
+                comment: pledge.comment,
+                isAnonymous: pledge.isAnonymous
+            }).then((project) => {
+                navigate(`/project/${state.project}`);
+            }).finally(() => setIsSubmitting(false));
+        } else {
 
-        newPledge.then(project => {
-            navigate(`/project/${id}`);
-        }).finally(() => setIsSubmitting(false)); ;
+            const newPledge = postPledge({ ...pledge, project: Number(id) });
+
+            newPledge.then(project => {
+                navigate(`/project/${id}`);
+            }).finally(() => setIsSubmitting(false));
+        }
     };
 
     return (
@@ -64,7 +78,9 @@ function PledgeForm() {
                     onChange={handleChange}
                 />
             </div>
-            <button type="submit" onClick={handleSubmit} disabled={isSubmitting}>Submit Pledge</button>
+            <button type="submit" onClick={handleSubmit} disabled={isSubmitting}>
+                {state?.id ? "Update" : "Create"} Pledge
+            </button>
         </form>
     );
 }

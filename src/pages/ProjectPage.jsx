@@ -31,7 +31,6 @@ function ProjectPage() {
             <ul>
                 {project.pledges.map((pledgeData, key) => {
                     const isMyPledge = pledgeData.supporter === auth.username;
-                    console.log(pledgeData, isMyPledge);
                     return (
                         <li key={key}>
                             ${pledgeData.amount} from {pledgeData.is_anonymous ? "anonymous" : `${pledgeData.supporter}`}: {`${pledgeData.comment}`}

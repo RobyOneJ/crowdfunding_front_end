@@ -46,39 +46,41 @@ const ProjectForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} id='project-form'>
-      <input
-        type="text"
-        name="title"
-        placeholder="Project title"
-        value={title}
-        onChange={(event) => setTitle(event.target.value)}
-      />
-      <textarea
-        name="description"
-        placeholder="Project description"
-        value={description}
-        onChange={(event) => setDescription(event.target.value)}
-      />
-      <input
-        type="text"
-        name="goal"
-        placeholder="Goal $ amount"
-        value={goal}
-        onChange={(event) => setGoal(event.target.value)}
-      />
-      <input
-        type="text"
-        name="image"
-        placeholder="Upload image"
-        value={image}
-        onChange={(event) => setImage(event.target.value)}
-      />
-      <button type="submit" id='new-proj-button' disabled={isSubmitting}>
-        {state?.id ? "Update" : "Create"} Project
-      </button>
-      {error && <p>{error}</p>}
-    </form>
+    <div id="project-form-container">
+      <form onSubmit={handleSubmit} id='project-form'>
+        <input
+          type="text"
+          name="title"
+          placeholder="Project title"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+        <textarea
+          name="description"
+          placeholder="Project description"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        />
+        <input
+          type="text"
+          name="goal"
+          placeholder="Goal $ amount"
+          value={goal}
+          onChange={(event) => setGoal(event.target.value)}
+        />
+        <input
+          type="text"
+          name="image"
+          placeholder="Upload image"
+          value={image}
+          onChange={(event) => setImage(event.target.value)}
+        />
+        <button type="submit" id='new-proj-button' disabled={isSubmitting}>
+          {state?.id ? "Update" : "Create"} Project
+        </button>
+        {error && <p>{error}</p>}
+      </form>
+    </div>
   );
 };
 

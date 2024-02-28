@@ -20,7 +20,7 @@ function UserPage() {
 
     return (
         <div>
-            <h2>User Profile Page</h2>
+            <h2>User Account Page</h2>
             <h3>{`Username: ${user.username}`}</h3>
             <h3>{`First Name: ${user.first_name}`}</h3>
             <h3>{`Last name: ${user.last_name}`}</h3>

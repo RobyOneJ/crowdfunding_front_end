@@ -7,7 +7,7 @@ import ProjectPage from "./pages/ProjectPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import CreateProjectPage from './pages/CreateProjectPage.jsx';
 import PledgePage from './pages/PledgePage.jsx';
-import CreateUserPage from './pages/CreateUserPage.jsx';
+import SignupPage from './pages/SignupPage.jsx';
 import UserPage from './pages/UserPage.jsx';
 import UserForm from './components/UserForm.jsx';
 import { AuthProvider } from "./components/AuthProvider.jsx";
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       { path: "/project/edit", element: <ProjectForm /> },
       { path: "/pledge/:id", element: <PledgePage /> },
       { path: "/pledge/edit", element: <PledgeForm /> },
-      { path: "/account", element: <CreateUserPage /> },
+      { path: "/account", element: <SignupPage /> },
       { path: "/account/:id", element: <UserPage /> },
       { path: "/account/edit", element: <UserForm /> }
     ],

@@ -15,8 +15,7 @@ function ProjectCard({ projectData }) {
                         <div className="card-front"><img src={projectData.image} alt={'${projectData.title} image'} /></div>
                     </div>
                 </div>
-                <h3>{projectData.title}</h3>
-            </Link>
+                <h3>{projectData.title}</h3></Link>
         </div>
     );
 

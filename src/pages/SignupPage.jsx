@@ -1,7 +1,7 @@
 import UserForm from "../components/UserForm";
 
-function CreateUserPage() {
+function SignupPage() {
     return <UserForm />;
 }
 
-export default CreateUserPage;
+export default SignupPage;

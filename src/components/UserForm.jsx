@@ -108,7 +108,7 @@ function UserForm() {
                     />
                 </div>
                 <button id='user-button-submit' onClick={handleSubmit}>
-                    {auth.userId ? "Update" : "Create"} User Account
+                    {auth.userId ? "Update" : "Signup"}
                 </button>
             </form>
         </div>

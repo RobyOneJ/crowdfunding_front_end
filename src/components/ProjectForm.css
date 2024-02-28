@@ -1,8 +1,17 @@
+#project-form-container{
+    text-align: center;
+    padding: 100px 160px;
+    width: 80%;
+}
+
 #project-form {
-    display: flex;
-    flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
+    box-shadow: 0px 0px 10px rgb(137, 114, 250);
+    padding: 50px 0;
+    
+    display: flex;
+    flex-direction: column;
     align-items: stretch;
     justify-content: space-evenly;
     flex-flow: column wrap;
@@ -11,14 +20,14 @@
     padding-left: 200px;
     padding-right: 200px;
     padding-bottom: 100px;
-    border-style:solid ;
+    /*border-style:solid;
     border-radius: 5px;
     margin-top: 100px;
     margin-left: 100px;
     margin-right: 100px;
-    border-color:blue ;
-    box-shadow: 0px 0px 10px rgb(137, 114, 250);
-    background-color:blanchedalmond ;
+    border-color:blue;*/
+    border-radius: 20px;
+    
 }
 
 #project-form textarea {
@@ -32,23 +41,24 @@
 #project-form input {
     border-radius: 5px;
     height: 24px;
-    border: 1px solid blue;
+    border: 1px solid blueviolet;
     box-shadow: 0px 0px 5px gray;
 }
 
 #project-form button {
     font-weight: bold;
-    color: black;
+    color: blueviolet;
+    border: 3px solid blueviolet;
     background-color: white;
     margin-top: 10px;
     padding: 10px 8px;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 16px;
-    border: 2px solid blue;
+    border-radius: 16px;    
 }
 
 #new-proj-button:hover {
     cursor: pointer;
-    color:blue;
+    background-color: blueviolet;
+    color: white;
 }

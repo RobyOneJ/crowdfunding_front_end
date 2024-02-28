@@ -10,11 +10,6 @@
     list-style: none;
 }
 
-.menu:hover {
-    background-color: var(--color2);
-    color: var(--color1);
-    border-radius: 6px;
-}
 
 /* Style for the header nav links*/
 
@@ -25,21 +20,27 @@ header nav {
     flex-direction: row;
 }
 
-/* Default style of <a> tag*/
+/* Default style of general <a> tag*/
 a {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 24px;
-    color: var(--color2);
+    font-weight: bolder;
+    border-radius: 3px;
+    color:black ;
     padding-left: 4px;
     padding-right: 4px;
 }
 
 /* Default style for mouse pointer on the <a> element*/
-a.menu-item:hover {
-    background-color:navy;
-    color: var(--color1);
+a:hover {
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white;
     border-radius: 6px;
+
 }
 
 a:active {
-    color: lightskyblue;
+    color: blue;
 }
+

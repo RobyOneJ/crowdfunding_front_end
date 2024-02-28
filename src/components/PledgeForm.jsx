@@ -79,7 +79,7 @@ function PledgeForm() {
                 />
             </div>
             <button type="submit" onClick={handleSubmit} disabled={isSubmitting}>
-                {state?.id ? "Update" : "Create"} Pledge
+                {state?.id ? "Update" : "Submit"}
             </button>
         </form>
     );

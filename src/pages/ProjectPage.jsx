@@ -34,7 +34,7 @@ function ProjectPage() {
                     return (
                         <li key={key}>
                             ${pledgeData.amount} from {pledgeData.is_anonymous ? "anonymous" : `${pledgeData.supporter}`}: {`${pledgeData.comment}`}
-                            {isMyPledge && <Link to="/pledge/edit" state={pledgeData}><button>Update</button></Link>}
+                            {isMyPledge && <Link to="/pledge/edit" state={pledgeData}><button>Update pledge</button></Link>}
                         </li>
                     );
                 })}

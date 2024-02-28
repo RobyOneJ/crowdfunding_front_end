@@ -19,7 +19,7 @@ function NavBar() {
                     <li><Link to="/">Home</Link></li>
                     {auth.token ? (<li><Link to="/" onClick={handleLogout}>Logout</Link></li>) : (<li><Link to="/login">Login</Link></li>)}
                     {auth.token && <li><Link to="/project">New Project</Link></li>}
-                    {auth.token ? (<li><Link to={`account/${auth.userId}`}>My Account</Link></li>) : (<li><Link to="/account">New Account</Link></li>)}
+                    {auth.token ? (<li><Link to={`account/${auth.userId}`}>My Account</Link></li>) : (<li><Link to="/account">Signup</Link></li>)}
                 </ul>
             </nav>
         </div>

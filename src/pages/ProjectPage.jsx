@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project"
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/use-auth.js";
+import dateFormatter from "../util.js";
 import './ProjectPage.css';
 
 function ProjectPage() {
@@ -24,7 +25,7 @@ function ProjectPage() {
     return (
         <div id="project-page-container">
             <h2>{project.title}</h2>
-            <h3>Created at: {project.date_created}</h3>
+            <h3>Created at: {dateFormatter.format(project.date_created)}</h3>
             <h3>{`Status: ${project.is_open}`}</h3>
             {project.owner === auth.userId && <Link to="/project/edit" state={project}><button>Update project</button></Link>}
             {auth.userId && project.owner !== auth.userId && <Link to={`/pledge/${project.id}`}><button>New pledge</button></Link>}

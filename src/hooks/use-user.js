@@ -10,7 +10,7 @@ function useUser(userId) {
     
     useEffect(() => {
         getUser(userId).then((user) => {
-            setUser(user);
+            setUser({...user, date_joined: user?.date_joined ? Date.parse(user.date_joined): ''});
             setIsLoading(false);
         }).catch((error) => {
             setError(error);

@@ -46,3 +46,7 @@
 #project-page-container a:hover {
     background-color: initial;
 }
+
+#project-page-container ul li button {
+    padding: 0 6px;
+}

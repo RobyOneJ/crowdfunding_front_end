@@ -10,7 +10,7 @@ function useProject(projectId) {
     
     useEffect(() => {
         getProject(projectId).then((project) => {
-            setProject(project);
+            setProject({...project, date_created: project?.date_created ? Date.parse(project.date_created): ''});
             setIsLoading(false);
         }).catch((error) => {
             setError(error);

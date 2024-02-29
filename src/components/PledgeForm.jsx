@@ -7,6 +7,7 @@ import './PledgeForm.css';
 
 
 function PledgeForm() {
+    const { id } = useParams();
     const { state } = useLocation();
     const navigate = useNavigate();
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,8 +72,8 @@ function PledgeForm() {
                         onChange={handleChange}
                     />
                 </div>
-                <div>
-                    <label id='checkbox' htmlFor="is_anonymous">Anonymous</label>
+                <div id="anonymous-checkbox-container">
+                    <label htmlFor="is_anonymous">Anonymous: </label>
                     <input
                         type="checkbox"
                         id="isAnonymous"

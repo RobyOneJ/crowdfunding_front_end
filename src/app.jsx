@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import HeaderBanner from "./components/HeaderBanner";
 import githuburl from "./assets/imges/github.png"
 import linkedinurl from "./assets/imges/linkedin.png"
 import shecodesurl from "./assets/imges/She_Codes.png"
@@ -8,6 +9,7 @@ import "./app.css";
 const App = () => {
     return (
         <div>
+            <HeaderBanner />
             <NavBar />
             <Outlet />
             <div>

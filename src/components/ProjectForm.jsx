@@ -48,6 +48,7 @@ const ProjectForm = () => {
   return (
     <div id="project-form-container">
       <form onSubmit={handleSubmit} id='project-form'>
+        <label htmlFor="projectTitle">Project title: </label>
         <input
           type="text"
           name="title"
@@ -55,12 +56,14 @@ const ProjectForm = () => {
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
+        <label htmlFor="description">Project description: </label>
         <textarea
           name="description"
           placeholder="Project description"
           value={description}
           onChange={(event) => setDescription(event.target.value)}
         />
+        <label htmlFor="goal">Target amount$: </label>
         <input
           type="text"
           name="goal"
@@ -68,10 +71,11 @@ const ProjectForm = () => {
           value={goal}
           onChange={(event) => setGoal(event.target.value)}
         />
+        <label htmlFor="image">Upload image: </label>
         <input
           type="text"
           name="image"
-          placeholder="Upload image"
+          placeholder="Image url"
           value={image}
           onChange={(event) => setImage(event.target.value)}
         />

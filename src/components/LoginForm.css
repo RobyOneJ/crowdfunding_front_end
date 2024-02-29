@@ -17,6 +17,11 @@
     border-radius: 20px;
 }
 
+#login-form label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
 #login-form div {
     margin-top: 16px;
     margin-bottom: 16px;

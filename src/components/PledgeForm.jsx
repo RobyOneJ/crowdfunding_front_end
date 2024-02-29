@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import postPledge from "../api/post-pledge";
 import putPledge from "../api/put-pledge";
 import { useLocation } from "react-router-dom";
+import './PledgeForm.css';
 
 
 function PledgeForm() {
@@ -49,39 +50,41 @@ function PledgeForm() {
     };
 
     return (
-        <form>
-            <div>
-                <label htmlFor="amount">$ amount: </label>
-                <input
-                    type="number"
-                    id="amount"
-                    value={pledge.amount}
-                    placeholder="Enter $ amount"
-                    onChange={handleChange}
-                />
-            </div>
-            <div>
-                <label htmlFor="comment">Leave a comment: </label>
-                <textarea
-                    id="comment"
-                    value={pledge.comment}
-                    placeholder="Leave a comment"
-                    onChange={handleChange}
-                />
-            </div>
-            <div>
-                <label htmlFor="is_anonymous">Anonymous</label>
-                <input
-                    type="checkbox"
-                    id="isAnonymous"
-                    value={pledge.isAnonymous}
-                    onChange={handleChange}
-                />
-            </div>
-            <button type="submit" onClick={handleSubmit} disabled={isSubmitting}>
-                {state?.id ? "Update" : "Submit"}
-            </button>
-        </form>
+        <div id='pledge-form-container'>
+            <form id='pledge-form'>
+                <div>
+                    <label htmlFor="amount">Pledge amount: </label>
+                    <input
+                        type="number"
+                        id="amount"
+                        value={pledge.amount}
+                        placeholder="$ amount"
+                        onChange={handleChange}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="comment">Leave a comment: </label>
+                    <textarea
+                        id="comment"
+                        value={pledge.comment}
+                        placeholder="Leave a comment"
+                        onChange={handleChange}
+                    />
+                </div>
+                <div>
+                    <label id='checkbox' htmlFor="is_anonymous">Anonymous</label>
+                    <input
+                        type="checkbox"
+                        id="isAnonymous"
+                        value={pledge.isAnonymous}
+                        onChange={handleChange}
+                    />
+                </div>
+                <button type="submit" id='pledge-button' onClick={handleSubmit} disabled={isSubmitting}>
+                    {state?.id ? "Update" : "Submit"}
+                </button>
+            </form>
+        </div>
     );
 }
 

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import useUser from "../hooks/use-user.js";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/use-auth.js";
+import './UserPage.css';
 
 
 function UserPage() {
@@ -19,7 +20,7 @@ function UserPage() {
 
 
     return (
-        <div>
+        <div id="user-page-container">
             <h2>User Account Page</h2>
             <h3>{`Username: ${user.username}`}</h3>
             <h3>{`First Name: ${user.first_name}`}</h3>

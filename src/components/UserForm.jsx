@@ -60,6 +60,7 @@ function UserForm() {
             <form id="user-form">
                 { !auth.userId && 
                 <div>
+                    <label htmlFor="username">Username: </label>
                     <input
                         type="text"
                         id="username"
@@ -71,6 +72,7 @@ function UserForm() {
                 }
                 { !auth.userId && 
                 <div>
+                    <label htmlFor="password">Password: </label>
                     <input
                         type="password"
                         id="password"
@@ -81,6 +83,7 @@ function UserForm() {
                 </div>
                 }
                 <div>
+                <label htmlFor="firstname">First name: </label>
                     <input
                         type="text"
                         id="first_name"
@@ -90,6 +93,7 @@ function UserForm() {
                     />
                 </div>
                 <div>
+                <label htmlFor="lastname">Last name: </label>
                     <input
                         type="text"
                         id="last_name"
@@ -99,6 +103,7 @@ function UserForm() {
                     />
                 </div>
                 <div>
+                <label htmlFor="email">Valid email: </label>
                     <input
                         type="text"
                         id="email"

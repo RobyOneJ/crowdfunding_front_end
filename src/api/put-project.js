@@ -18,7 +18,7 @@ async function putProject(projectData) {
         });
 
         if (!response.ok) {
-            const fallbackError = 'Error updating project';
+            const fallbackError = `Error updating project ${projectData.id}`;
             const errorData = await response.json().catch(() => {
                 throw new Error(fallbackError);
             });
@@ -28,11 +28,11 @@ async function putProject(projectData) {
         }
 
         const project = await response.json();
-        console.log("Project updated successfully!");
+        alert("Project updated successfully!");
         return project;
 
     } catch (error) {
-        console.error('Error creating project:', error);
+        alert('Error creating project:' + error);
         throw error;
     }
 }

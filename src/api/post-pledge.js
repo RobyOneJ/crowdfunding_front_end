@@ -28,11 +28,11 @@ async function postPledge(pledgeData) {
         }
 
         const pledge = await response.json();
-        console.log("Pledge created successfully!");
+        alert("Pledge created successfully!");
         return pledge;
 
     } catch (error) {
-        console.error('Error creating pledge:', error);
+        alert('Error creating pledge:' + error);
         throw error;
     }
 }

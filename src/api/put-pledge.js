@@ -17,7 +17,7 @@ async function putPledge(pledgeData) {
         });
 
         if (!response.ok) {
-            const fallbackError = 'Error updating pledge';
+            const fallbackError = `Error updating pledge ${pledgeData.id}`;
             const errorData = await response.json().catch(() => {
                 throw new Error(fallbackError);
             });
@@ -27,11 +27,11 @@ async function putPledge(pledgeData) {
         }
 
         const pledge = await response.json();
-        console.log("Pledge updated successfully!");
+        alert("Pledge updated successfully!");
         return pledge;
 
     } catch (error) {
-        console.error('Error updating pledge:', error);
+        alert('Error updating pledge:' + error);
         throw error;
     }
 }

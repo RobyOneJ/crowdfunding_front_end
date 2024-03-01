@@ -30,11 +30,11 @@ async function postProject(projectData) {
         }
 
         const project = await response.json();
-        console.log("Project created successfully!");
+        alert("Project created successfully!");
         return project;
 
     } catch (error) {
-        console.error('Error creating project:', error);
+        alert('Error creating project:' + error);
         throw error;
     }
 }

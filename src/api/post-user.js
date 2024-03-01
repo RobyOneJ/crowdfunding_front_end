@@ -28,11 +28,11 @@ async function postUser({username, password, first_name, last_name, email}) {
         }
 
         const user = await response.json();
-        console.log("User account created successfully!");
+        alert("User account created successfully!");
         return user;
 
     } catch (error) {
-        console.error('Error creating user account:', error);
+        alert('Error creating user account:' + error);
         throw error;
     }
 }

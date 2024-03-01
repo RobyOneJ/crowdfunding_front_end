@@ -29,6 +29,11 @@ function PledgeForm() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (pledge.amount === "" || pledge.comment === "" || pledge.isAnonymous === "") {
+            alert("Please fill in all the fields");
+            return;
+        };
+
         setIsSubmitting(true);
 
         if (state?.id) {

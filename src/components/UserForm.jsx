@@ -8,7 +8,7 @@ import './UserForm.css';
 
 
 function UserForm() {
-    const {state} = useLocation();
+    const { state } = useLocation();
     const navigate = useNavigate();
     const { auth, setAuth } = useAuth();
 
@@ -32,6 +32,12 @@ function UserForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if (details.first_name === "" || details.last_name === "" || details.email === "") {
+            alert("Please fill in all the fields");
+            return;
+        };
+
         if (auth.userId) {
             putUser({
                 userId: auth.userId,
@@ -58,32 +64,32 @@ function UserForm() {
     return (
         <div id="user-form-container">
             <form id="user-form">
-                { !auth.userId && 
-                <div>
-                    <label htmlFor="username">Username: </label>
-                    <input
-                        type="text"
-                        id="username"
-                        placeholder="Enter a Username"
-                        autoComplete="new-username"
-                        onChange={handleChange}
-                    />
-                </div>
+                {!auth.userId &&
+                    <div>
+                        <label htmlFor="username">Username: </label>
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Enter a Username"
+                            autoComplete="new-username"
+                            onChange={handleChange}
+                        />
+                    </div>
                 }
-                { !auth.userId && 
-                <div>
-                    <label htmlFor="password">Password: </label>
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Enter a Password"
-                        autoComplete="new-password"
-                        onChange={handleChange}
-                    />
-                </div>
+                {!auth.userId &&
+                    <div>
+                        <label htmlFor="password">Password: </label>
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter a Password"
+                            autoComplete="new-password"
+                            onChange={handleChange}
+                        />
+                    </div>
                 }
                 <div>
-                <label htmlFor="firstname">First name: </label>
+                    <label htmlFor="firstname">First name: </label>
                     <input
                         type="text"
                         id="first_name"
@@ -93,7 +99,7 @@ function UserForm() {
                     />
                 </div>
                 <div>
-                <label htmlFor="lastname">Last name: </label>
+                    <label htmlFor="lastname">Last name: </label>
                     <input
                         type="text"
                         id="last_name"
@@ -103,7 +109,7 @@ function UserForm() {
                     />
                 </div>
                 <div>
-                <label htmlFor="email">Valid email: </label>
+                    <label htmlFor="email">Valid email: </label>
                     <input
                         type="text"
                         id="email"

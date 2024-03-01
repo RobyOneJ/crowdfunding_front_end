@@ -17,7 +17,7 @@ async function putUser({userId,first_name, last_name, email}) {
         });
 
         if (!response.ok) {
-            const fallbackError = 'Error updating user account';
+            const fallbackError = `Error updating user account ${userId}`;
             const errorData = await response.json().catch(() => {
                 throw new Error(fallbackError);
             });
@@ -27,11 +27,11 @@ async function putUser({userId,first_name, last_name, email}) {
         }
 
         const user = await response.json();
-        console.log("User updated successfully!");
+        alert("User updated successfully!");
         return user;
 
     } catch (error) {
-        console.error('Error updating user account:', error);
+        alert('Error updating user account:' + error);
         throw error;
     }
 }

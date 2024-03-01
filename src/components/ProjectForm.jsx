@@ -19,6 +19,10 @@ const ProjectForm = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (title === "" || description === "" || goal === "" || image === "") {
+      alert("Please fill in all the fields");
+      return;
+    };
 
     setIsSubmitting(true);
 

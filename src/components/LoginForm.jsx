@@ -24,6 +24,12 @@ function LoginForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        if (credentials.username === "" || credentials.password === "") {
+            alert("Please fill in all the fields");
+            return;
+          };
+
         if (credentials.username && credentials.password) {
             postLogin(
                 credentials.username,

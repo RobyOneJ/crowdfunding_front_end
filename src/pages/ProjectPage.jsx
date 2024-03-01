@@ -38,9 +38,11 @@ function ProjectPage() {
     return (
         <div id="project-page-container">
             <h2>{project.title}</h2>
+            <h3>Description: {project.description}</h3>
             <h3>Created at: {dateFormatter.format(project.date_created)}</h3>
             <h3>Status: {project.is_open ? "Active" : "Inactive"}</h3>
             <h3>Target amount: ${project.goal}</h3>
+            
 
             {project.owner === auth.userId && <div id="project-management-container"><Link to="/project/edit" state={project}><button>Update project</button></Link><button onClick={handleDelete}>Delete project</button></div>}
             {auth.userId && project.owner !== auth.userId && <Link to={`/pledge/${project.id}`}><button>New pledge</button></Link>}

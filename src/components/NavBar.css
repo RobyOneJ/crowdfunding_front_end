@@ -4,7 +4,7 @@
     justify-content: space-evenly;
     flex-direction: row;
     font-size: medium;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .menu li {
@@ -24,7 +24,7 @@ header nav {
 /* Default style of general <a> tag*/
 a {
     font-family:cursive;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bolder;
     border-radius: 3px;
     color:black ;

@@ -1,30 +1,12 @@
 #header-container {
-    position: relative;
+    background-color: #706a8b;
     height: 150px;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: left;
+    justify-content: left;
 }
 
-#header-container::before {
-    content: "";
-    background-image: url("/src/assets/imges/d11fb5d62bb270e40e89e10f1af02a7de8abf480.jpg");
-    background-size: contain;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.60;
-}
-
-#header-container h1 {
-    font-family: cursive;
-    font-style: oblique;
-    position: relative;
-    color: blue;
-    font-size: 150px;
-    line-height: 0.9;
-    text-align: center;
+#header-container img {
+    height: 150px;
 }

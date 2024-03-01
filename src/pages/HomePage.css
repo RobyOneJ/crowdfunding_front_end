@@ -1,17 +1,19 @@
 #homepage-heading {
     font-family: cursive;
     font-size: 24px;
-    color: black;
+    background-color: #706a8b;
+    color: white;
     text-align: justify;
     padding: 36px;
-    margin-top: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #project-list {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: 30%30%30%;
-    column-gap: 10px;
-    row-gap: 10px;
+    column-gap: 30px;
+    row-gap: 20px;
 }
 

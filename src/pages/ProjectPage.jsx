@@ -26,6 +26,9 @@ function ProjectPage() {
 
     const handleDelete = async (event) => {
         event.preventDefault();
+        if (!confirm("Are you sure you want to delete this project?")) {
+            return;
+        }
         deleteProject(id).then(() => {
             navigate("/");
         })
@@ -39,7 +42,7 @@ function ProjectPage() {
             <h3>Status: {project.is_open ? "Active" : "Inactive"}</h3>
             <h3>Target amount: ${project.goal}</h3>
 
-            {project.owner === auth.userId && <><Link to="/project/edit" state={project}><button>Update project</button></Link><button onClick={handleDelete}>Delete project</button></>}
+            {project.owner === auth.userId && <div id="project-management-container"><Link to="/project/edit" state={project}><button>Update project</button></Link><button onClick={handleDelete}>Delete project</button></div>}
             {auth.userId && project.owner !== auth.userId && <Link to={`/pledge/${project.id}`}><button>New pledge</button></Link>}
             <h3>Pledges:</h3>
             <ul>

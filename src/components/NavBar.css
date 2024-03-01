@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     flex-direction: row;
     font-size: medium;
+    margin-top: 50px;
 }
 
 .menu li {

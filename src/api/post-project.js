@@ -24,9 +24,10 @@ async function postProject(projectData) {
             const errorData = await response.json().catch(() => {
                 throw new Error(fallbackError);
             });
-
-            const errorMessage = errorData?.detail ?? fallbackError;
-            throw new Error(errorMessage);
+            const message = Object.getOwnPropertyNames(errorData)
+                .map(name => `${name}: ${errorData[name]}`)
+                .join('\n');
+            throw new Error(message);
         }
 
         const project = await response.json();
@@ -34,7 +35,7 @@ async function postProject(projectData) {
         return project;
 
     } catch (error) {
-        alert('Error creating project:' + error);
+        alert('Error creating project:\n' + error.message);
         throw error;
     }
 }

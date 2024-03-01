@@ -1,4 +1,4 @@
-async function putUser({userId,first_name, last_name, email}) {
+async function putUser({ userId, first_name, last_name, email }) {
     const url = `${import.meta.env.VITE_API_URL}/users/${userId}`;
     const token = `Token ${window.localStorage.getItem("token")}`;
 
@@ -21,9 +21,10 @@ async function putUser({userId,first_name, last_name, email}) {
             const errorData = await response.json().catch(() => {
                 throw new Error(fallbackError);
             });
-
-            const errorMessage = errorData?.detail ?? fallbackError;
-            throw new Error(errorMessage);
+            const message = Object.getOwnPropertyNames(errorData)
+                .map(name => `${name}: ${errorData[name]}`)
+                .join('\n');
+            throw new Error(message);
         }
 
         const user = await response.json();
@@ -31,7 +32,7 @@ async function putUser({userId,first_name, last_name, email}) {
         return user;
 
     } catch (error) {
-        alert('Error updating user account:' + error);
+        alert('Error updating user account:\n' + error.message);
         throw error;
     }
 }

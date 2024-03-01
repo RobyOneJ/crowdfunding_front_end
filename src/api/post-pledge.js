@@ -23,8 +23,10 @@ async function postPledge(pledgeData) {
                 throw new Error(fallbackError);
             });
 
-            const errorMessage = errorData?.detail ?? fallbackError;
-            throw new Error(errorMessage);
+            const message = Object.getOwnPropertyNames(errorData)
+                .map(name => `${name}: ${errorData[name]}`)
+                .join('\n');
+            throw new Error(message);
         }
 
         const pledge = await response.json();
@@ -32,7 +34,7 @@ async function postPledge(pledgeData) {
         return pledge;
 
     } catch (error) {
-        alert('Error creating pledge:' + error);
+        alert('Error creating pledge:\n' + error.message);
         throw error;
     }
 }

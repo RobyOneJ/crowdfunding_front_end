@@ -17,15 +17,17 @@ async function deleteProject(projectId) {
                 throw new Error(fallbackError);
             });
 
-            const errorMessage = errorData?.detail ?? fallbackError;
-            throw new Error(errorMessage);
+            const message = Object.getOwnPropertyNames(errorData)
+                .map(name => `${name}: ${errorData[name]}`)
+                .join('\n');
+            throw new Error(message);
         }
         alert(`Project id ${projectId} deleted successfully!`);
         return response;
-        
+
 
     } catch (error) {
-        alert('Error deleting project:', error);
+        alert('Error deleting project:\n', error.message);
         throw error;
     }
 }

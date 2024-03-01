@@ -1,4 +1,4 @@
-async function postUser({username, password, first_name, last_name, email}) {
+async function postUser({ username, password, first_name, last_name, email }) {
     const url = `${import.meta.env.VITE_API_URL}/users/`;
 
     try {
@@ -23,8 +23,10 @@ async function postUser({username, password, first_name, last_name, email}) {
                 throw new Error(fallbackError);
             });
 
-            const errorMessage = errorData?.detail ?? fallbackError;
-            throw new Error(errorMessage);
+            const message = Object.getOwnPropertyNames(errorData)
+                .map(name => `${name}: ${errorData[name]}`)
+                .join('\n');
+            throw new Error(message);
         }
 
         const user = await response.json();
@@ -32,7 +34,7 @@ async function postUser({username, password, first_name, last_name, email}) {
         return user;
 
     } catch (error) {
-        alert('Error creating user account:' + error);
+        alert('Error creating user account:\n' + error.message);
         throw error;
     }
 }

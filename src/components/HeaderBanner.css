@@ -1,11 +1,30 @@
 #header-container {
-    font-family: cursive;
-    text-align: center;
-    font-style: oblique;
-    font-size:50px;
-    color: blue;
-    background-color:blanchedalmond;
-    margin: auto;
- 
+    position: relative;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+#header-container::before {
+    content: "";
+    background-image: url("/src/assets/imges/d11fb5d62bb270e40e89e10f1af02a7de8abf480.jpg");
+    background-size: contain;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.60;
+}
+
+#header-container h1 {
+    font-family: cursive;
+    font-style: oblique;
+    position: relative;
+    color: blue;
+    font-size: 150px;
+    line-height: 0.9;
+    text-align: center;
 }

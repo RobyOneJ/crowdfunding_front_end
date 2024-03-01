@@ -22,8 +22,10 @@ async function putPledge(pledgeData) {
                 throw new Error(fallbackError);
             });
 
-            const errorMessage = errorData?.detail ?? fallbackError;
-            throw new Error(errorMessage);
+            const message = Object.getOwnPropertyNames(errorData)
+                .map(name => `${name}: ${errorData[name]}`)
+                .join('\n');
+            throw new Error(message);
         }
 
         const pledge = await response.json();
@@ -31,7 +33,7 @@ async function putPledge(pledgeData) {
         return pledge;
 
     } catch (error) {
-        alert('Error updating pledge:' + error);
+        alert('Error updating pledge:\n' + error.message);
         throw error;
     }
 }

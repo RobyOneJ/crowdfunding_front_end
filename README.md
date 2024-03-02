@@ -37,16 +37,6 @@ EDUKidz platform likely targets two main audiences:
 
 It's important to note that EDUKidz might also target individuals who can raise awareness for the platform and its causes. This could include educators, social media influencers, or celebrities who can help spread the word and attract potential donors and beneficiaries.
 
-
-## Front End Pages/Functionality - COMING SOON
-- {{ A page on the front end }}    
-- {{ A list of dot-points showing functionality is available on this page }}    
-    - {{ etc }}    
-    - {{ etc }}
-- {{ A second page available on the front end }}    
-- {{ Another list of dot-points showing functionality }}    
-    - {{ etc }}
-
 ## Project Requirements
 
 This crowdfunding project must:

@@ -1,8 +1,5 @@
 # crowdfunding_front_end
 A repo to contain my She Codes Crowdfunding front end project
-
-
-# crowdfunding_back_end
 by: Roberta De Cecco
 
 ### Live website link: [EDUKidz](https://edukidz.netlify.app/)

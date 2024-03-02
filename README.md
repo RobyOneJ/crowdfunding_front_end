@@ -68,6 +68,9 @@ This crowdfunding project must:
     * [x] Title
     * [x] Owner (a user)
     * [x] Description
+    I added the description on the back of each project card that flips and also on the project page. Sample images in the 'Imges' folder.
+    [GitHub Crowdfunding Repo](https://github.com/RobyOneJ/crowdfunding_front_end/tree/main/src/assets/imges)
+
     * [x] Image
     * [x] Target amount to fundraise
     * [x] Whether it is currently open to accepting new supporters or not

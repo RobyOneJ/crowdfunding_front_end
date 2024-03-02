@@ -46,6 +46,7 @@ function ProjectPage() {
 
             {project.owner === auth.userId && <div id="project-management-container"><Link to="/project/edit" state={project}><button>Update project</button></Link><button onClick={handleDelete}>Delete project</button></div>}
             {auth.userId && project.owner !== auth.userId && <Link to={`/pledge/${project.id}`}><button>New pledge</button></Link>}
+            <br/>
             <h3>Pledges:</h3>
             <ul>
                 {project.pledges.map((pledgeData, key) => {

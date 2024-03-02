@@ -70,6 +70,12 @@
 
     #project-page-container li {
         font-size: small;
+        margin-bottom: 10px;
+    }
+
+    #project-management-container button {
+        padding: 4px 10px;
+        font-size: small;
     }
 
     #project-management-container button {

@@ -17,3 +17,17 @@
     row-gap: 20px;
 }
 
+
+/*Media query for Homepage*/
+@media only screen and (max-width: 767px) {
+    #homepage-heading {
+        font-size: small;
+    }
+
+    #project-list {
+        display: block;
+
+    }
+
+}
+

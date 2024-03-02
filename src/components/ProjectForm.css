@@ -67,3 +67,23 @@
     background-color: blueviolet;
     color: white;
 }
+
+
+/*Media query for Project form*/
+@media only screen and (max-width: 767px) {
+    #project-form-container {
+        margin-top: 40px;
+        width: initial;
+        padding: 0;
+    }
+
+    #project-form {
+        padding: 20px;
+    }
+
+    #project-form button {
+        padding: 4px 10px;
+        font-size: small;
+    }
+
+}

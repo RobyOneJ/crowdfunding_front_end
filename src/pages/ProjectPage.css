@@ -50,3 +50,33 @@
 #project-page-container ul li button {
     padding: 0 6px;
 }
+
+
+  /*Media query for Project page*/
+  @media only screen and (max-width: 767px) {
+    #project-page-container {
+      margin: 0;
+      margin-top: 40px;
+      padding: 10px;
+    }
+
+    #project-page-container h2 {
+        font-size: medium;
+    }
+
+    #project-page-container h3 {
+        font-size: small;
+    }
+
+    #project-page-container li {
+        font-size: small;
+    }
+
+    #project-management-container button {
+        padding: 4px 10px;
+        font-size: small;
+    }
+
+
+
+  }

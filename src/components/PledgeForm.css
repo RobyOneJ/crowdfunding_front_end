@@ -72,3 +72,33 @@
     background-color: blueviolet;
     color: white;
 }
+
+
+/*Media query for Project form*/
+@media only screen and (max-width: 767px) {
+    #pledge-form-container {
+        margin-top: 40px;
+        width: initial;
+        padding: 0;
+    }
+
+    #pledge-form {
+        text-align: initial;
+        padding: 20px;
+    }
+
+    #pledge-form textarea {
+        width: 100%;
+    }
+
+    #anonymous-checkbox-container {
+        justify-content: left;
+    }
+
+    #pledge-form button {
+        margin: 0 40%;
+        padding: 4px 10px;
+        font-size: small;
+    }
+
+}

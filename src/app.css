@@ -64,3 +64,35 @@ footer a:hover img.logo {
     margin: 0;
 }
 
+
+/* Adding media query to handle smartphones screen size*/
+@media only screen and (max-width: 767px) {
+    #page-container {
+        position:initial;
+        height: 8rem;
+        min-height: initial;
+        
+    }
+
+    .logo {
+        width: 30px;
+        padding: 4px;
+    }
+
+    .shecodeslogo {
+        height: 20px;
+        margin: 2px;
+    }
+
+    #page-container footer {
+        position: initial;
+    }
+
+    footer {
+        margin-top: 50px;
+    }
+
+    footer p.small-text a {
+        font-size: 0.8rem;
+    }
+}

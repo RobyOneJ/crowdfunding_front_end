@@ -45,3 +45,10 @@ a:active {
     color: blue;
 }
 
+/*Media query for NavBar*/
+@media only screen and (max-width: 767px) {
+    .menu a {
+        font-size: small;
+    }
+}
+

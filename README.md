@@ -37,16 +37,6 @@ EDUKidz platform likely targets two main audiences:
 
 It's important to note that EDUKidz might also target individuals who can raise awareness for the platform and its causes. This could include educators, social media influencers, or celebrities who can help spread the word and attract potential donors and beneficiaries.
 
-
-## Front End Pages/Functionality - COMING SOON
-- {{ A page on the front end }}    
-- {{ A list of dot-points showing functionality is available on this page }}    
-    - {{ etc }}    
-    - {{ etc }}
-- {{ A second page available on the front end }}    
-- {{ Another list of dot-points showing functionality }}    
-    - {{ etc }}
-
 ## Project Requirements
 
 This crowdfunding project must:
@@ -78,11 +68,12 @@ This crowdfunding project must:
     *   [x] The supporter/user (i.e. who created the pledge)
     *   [x] Whether the pledge is anonymous or not
     *   [x] A comment to go along with the pledge
-    *   [x] Implement suitable update/delete functionality, e.g. should a project owner be allowed to update a project description? 
-    Yes, I allowed to update project details and delete project based on user permission on whether it is the author. If not, he/she won't see the buttons.
+    *   [x] Implement suitable update/delete functionality, e.g. should a project owner be allowed to update a project description?
+Yes, I allowed to update project details and delete project based on user permission on whether it is the author. If not, he/she won't see the buttons.
 * [x] Implement suitable permissions, e.g. who is allowed to delete a pledge? 
-No one but I allowed to update Pledge details to the supporter user if logged in and if the creator. If not, he/she won't the buttons.
-* [x] Return the relevant status codes for both successful and unsuccessful requests to the API. (Backend but I implemented some alerts on screen when user forgets type into fields or makes mistakes)
+No one but I allowed to update Pledge details to the supporter user if logged in and if the creator. If not, he/she won't see the buttons.
+* [x] Return the relevant status codes for both successful and unsuccessful requests to the API.
+(Backend related but I implemented some alerts on screens when user forgets to type into fields or makes mistakes)
 * [x] Handle failed requests gracefully (e.g. you should have a custom 404 pag erather than the default error page).
 This was backend.
 * [x] Use Token Authentication.

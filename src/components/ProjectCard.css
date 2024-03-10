@@ -1,8 +1,8 @@
 .project-card {
-    width: 100%;
-    border: 1px solid black;
-    box-shadow: 0px 0px 5px gray;
-    background-color: lightcyan;
+  width: 100%;
+  border: 1px solid black;
+  box-shadow: 0px 0px 5px gray;
+  background-color: lightcyan;
 }
 
 .project-card a:hover {
@@ -22,7 +22,7 @@
   color: blue;
 }
 
-.project-card a h3:hover{
+.project-card a h3:hover {
   cursor: pointer;
   background-color: blue;
   color: white;
@@ -30,62 +30,62 @@
 }
 
 .project-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .flippable {
-    /*Sizing*/
-    height: 300px;
-    width: 100%;
-    perspective: 1000px;
+  /*Sizing*/
+  height: 300px;
+  width: 100%;
+  perspective: 1000px;
 }
 
 .card {
-    /*Sizing*/
-    height: 100%;
-    width: 100%;
+  /*Sizing*/
+  height: 100%;
+  width: 100%;
 
-    transform-style: preserve-3d;
+  transform-style: preserve-3d;
 
-    /*Content Alignment*/
-    position: relative;
+  /*Content Alignment*/
+  position: relative;
 
-    /*Styling*/
-    border-radius: 5px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+  /*Styling*/
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
 
-    transition: transform 1200ms;
+  transition: transform 1200ms;
 }
 
 .card:hover {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 
 }
 
 .card-front,
-.card-back{
-    /*Sizing*/
-    height: 100%;
-    width: 100%;
+.card-back {
+  /*Sizing*/
+  height: 100%;
+  width: 100%;
 
-    backface-visibility: hidden;
+  backface-visibility: hidden;
 
-    /*Alignment*/
-    position: absolute;
+  /*Alignment*/
+  position: absolute;
 
-    /*Styling*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /*Styling*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    /*Fonts*/
-    font-size:larger;
-    text-align: center;
-    background-color: beige;
-    font-family: Arial, Helvetica, sans-serif;
-    color: blue;
+  /*Fonts*/
+  font-size: larger;
+  text-align: center;
+  background-color: beige;
+  font-family: Arial, Helvetica, sans-serif;
+  color: blue;
 }
 
 
@@ -94,7 +94,7 @@
 }*/
 
 .card-back {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 /*.floating {
@@ -132,4 +132,9 @@
     }
   }*/
 
+@media only screen and (max-width: 767px) {
 
+  .card:hover {
+    transform:none;
+  }
+}
